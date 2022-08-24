@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de mots</title>
+    <meta name="description" content="Crée des jeu de mots avec n'importe quelle combinaison de lettres.">
+    <meta name="author" content="Du_Cassoulet">
+    <meta property="keywords" content="generateur, jeu, de, mots, phonetic, phonems, rimes, rhymes">
+    <meta property="og:title" content="Jeu de mots">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jeudemots.fun">
+    <meta property="og:description" content="Crée des jeu de mots avec n'importe quelle combinaison de lettres.">
+    <meta property="og:image" content="https://jeudemots.fun/assets/images/favicon_x8.png">
+    <meta property="theme-color" content="#e3304b">
+    <link rel="icon" href="assets/images/favicon_x8.png">
+    <script src="javascript/script.js" type="module" defer></script>
+    <script src="javascript/main.js" type="module" defer></script>
+    <script src="javascript/favs.js" type="module" defer></script>
+    <link rel="stylesheet" href="sass/font-face.css">
+    <link rel="stylesheet" href="sass/main.css">
+    <script src="javascript/fontawesome.js" crossorigin="anonymous"></script>
+    <script async src="javascript/google.js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config","G-EHPSH7VX42");
+    </script>
+  </head>
+  <body>
+    <section class="content" id="main-content">
+      <form class="searchbar" id="search-form">
+        <button class="favs-button" type="button" id="goto-favs">
+          <i class="fas fa-star"></i>
+        </button>
+        <div class="search-container">
+          <input
+            type="text"
+            class="search-field"
+            id="searchbar"
+            spellcheck="false"
+            required
+            pattern="[^ ]{3,}"
+          >
+          <button class="randomize" type="button" id="randomize">
+            <i class="fas fa-compass"></i>
+          </button>
+        </div>
+        <button class="search-button desktop" type="submit">Rechercher</button>
+        <button class="search-button phone" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+      <div class="words" id="words">
+        <div class="words-category">
+          <h4 class="cat-title">Les mots incluant "<span class="word"></span>"</h4>
+          <div class="words-content" id="including"></div>
+        </div>
+        <div class="words-category">
+          <h4 class="cat-title">Mots correspondant à la fin du mot "<span class="word"></span>"</h4>
+          <div class="words-content" id="ending"></div>
+        </div>
+        <div class="words-category">
+          <h4 class="cat-title">Mots correspondants commençant par "<span class="word"></span>".</h4>
+          <div class="words-content" id="starting"></div>
+        </div>
+      </div>
+      <div class="words" id="rhymes">
+        <div class="words-category">
+          <h4 class="cat-title">Les mots rimant avec "<span class="word"></span>"</h4>
+          <div class="words-content large" id="rhymes-list"></div>
+        </div>
+      </div>
+    </section>
+    <section class="content" id="favs-content" hidden>
+      <div class="searchbar">
+        <button class="favs-button" type="button" id="goto-home">
+          <i class="fas fa-home"></i>
+        </button>
+        <div class="search-container" style="border-right: 1px solid #3b3e41;">
+          <input
+            type="text"
+            class="search-field"
+            id="searchbar-favs"
+            spellcheck="false"
+            required
+            pattern="[^ ]{3,}"
+          >
+        </div>
+      </div>
+      <div class="words">
+        <div class="words-category">
+          <h4 class="cat-title">Jeu de mots favoris</h4>
+          <div class="words-content" id="favs-words"></div>
+        </div>
+        <div class="words-category">
+          <h4 class="cat-title">Rimes favorites</h4>
+          <div class="words-content large" id="favs-rhymes"></div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <section class="content">
+        <h4>Fait avec le ❤️ par Du_Cassoulet</h4>
+      </section>
+    </footer>
+  </body>
+</html>
